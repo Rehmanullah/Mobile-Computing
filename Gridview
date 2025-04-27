@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+void main() {
+  runApp(MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Stack Widget Example')),
+        body: Center(
+            child: GridView.count(
+              crossAxisCount: 2,
+              children: List.generate(12, (index) {
+                return Container(
+                  margin: EdgeInsets.all(8),
+                  color: Colors.teal,
+                  child: Center(child: Text('Item $index')),
+                );
+              }),
+            )
+        ),
+      )));
+}
