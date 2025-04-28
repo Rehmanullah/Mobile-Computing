@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Card(
+            elevation: 4,
+            color: Colors.blue, // Background color of the card
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+children: [
+                  Text(
+                    'Card Widget',
+                    style: TextStyle(
+                      color: Colors.white, // Text color
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Divider(color: Colors.white54, thickness: 3),
+                  SizedBox(height: 10),
+                  Text(
+                    'Additional Content',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
