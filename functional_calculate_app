@@ -7,7 +7,6 @@ void main() {
     ),
   );
 }
-
 class MyApp extends StatefulWidget{
   final String title;
   const MyApp({super.key,required this.title});
@@ -22,29 +21,29 @@ class _MyAppState extends State<MyApp> {
 
   String? operator;
   double? result;
+  String? error;
+
   calculate(){
-    double valueOne = double.parse(valueOneController.text) ;
-    double valuetwo = double.parse(valueTwoController.text);
+    double valueOne = double.parse(valueOneController.text);
+    double valueTwo = double.parse(valueTwoController.text);
     switch(operator){
       case "+":
-        result = valueOne + valuetwo;
+        result = valueOne + valueTwo;
         break;
       case "-":
-        result = valueOne - valuetwo;
+        result = valueOne - valueTwo;
         break;
       case "*":
-        result = valueOne * valuetwo;
+        result = valueOne * valueTwo;
         break;
       case "/":
-        result = valueOne / valuetwo;
+        result = valueOne / valueTwo;
         break;
       default:
-        print("Invalid Value");
+        error = "Please select an operator + or - or * or /";
     }
     setState(() {    });
-    print(result);
   }
-
   @override
   build(BuildContext context){
     return MaterialApp(
@@ -81,6 +80,7 @@ class _MyAppState extends State<MyApp> {
                   MaterialButton(
                     onPressed: () {
                       operator = "+";
+                      error = null;
                     },
                     color: Colors.blue,
                     child: Text("+", style: TextStyle(color: Colors.white)),
@@ -88,6 +88,7 @@ class _MyAppState extends State<MyApp> {
                   MaterialButton(
                     onPressed: () {
                       operator = "-";
+                      error = null;
                     },
                     color: Colors.blue,
                     child: Text("-", style: TextStyle(color: Colors.white)),
@@ -95,6 +96,7 @@ class _MyAppState extends State<MyApp> {
                   MaterialButton(
                     onPressed: () {
                       operator = "*";
+                      error = null;
                     },
                     color: Colors.blue,
                     child: Text("*", style: TextStyle(color: Colors.white)),
@@ -102,6 +104,7 @@ class _MyAppState extends State<MyApp> {
                   MaterialButton(
                     onPressed: () {
                       operator = "/";
+                      error = null;
                     },
                     color: Colors.blue,
                     child: Text("/", style: TextStyle(color: Colors.white)),
@@ -123,7 +126,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-              Text(result.toString()),
+              Text(error == null ? result.toString() : error.toString()),
             ],
           ),
         ),
