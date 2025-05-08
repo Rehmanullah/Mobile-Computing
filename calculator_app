@@ -1,0 +1,83 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MyApp(),
+  );
+}
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
+  @override
+  build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("My Calculator"),
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "Enter Value 1",
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 20),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "Enter Value 2",
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  MaterialButton(
+                    onPressed: () {},
+                    color: Colors.blue,
+                    child: Text("+", style: TextStyle(color: Colors.white)),
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    color: Colors.blue,
+                    child: Text("-", style: TextStyle(color: Colors.white)),
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    color: Colors.blue,
+                    child: Text("*", style: TextStyle(color: Colors.white)),
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    color: Colors.blue,
+                    child: Text("/", style: TextStyle(color: Colors.white)),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20,),
+              MaterialButton(
+                onPressed: () {},
+                color: Colors.blue,
+                child: Text(
+                  "Calculate",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
