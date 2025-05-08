@@ -1,0 +1,18 @@
+class MyFirstStatefulWidget extends StatefulWidget{
+  const MyFirstStatefulWidget({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    // This returns the state class
+    return MyFirstStateClass();
+  }
+}
+
+class MyFirstStateClass extends State{
+
+  @override
+  Widget build(BuildContext context) {
+    // This return a widget
+    return Text("Something");
+  }
+}
