@@ -1,0 +1,12 @@
+class TodoModel {
+  final String taskName;
+  final String dueDate;
+  final String taskType;
+  final bool status;
+  TodoModel({
+   required this.taskName,
+    required this.dueDate,
+    required this.taskType,
+    required this.status,
+});
+}
