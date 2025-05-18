@@ -1,0 +1,14 @@
+Color todoTypeColor(String value){
+  switch(value){
+    case "Shopping":
+      return Colors.orange;
+    case "Work":
+      return Colors.blue;
+    case "Pending":
+      return Colors.red;
+    case "Wishlist":
+      return Colors.green;
+    default:
+      return Colors.black;
+  }
+}
