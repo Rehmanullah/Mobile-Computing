@@ -1,0 +1,14 @@
+ListView(
+        children: [
+          Card(
+            child: ListTile(
+              leading: Checkbox(value: true, onChanged: (value){
+                print(value);
+              }),
+              title: Text("Task1"),
+              subtitle: Text("19-05-2025", style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),),
+              trailing: Text("Pending", style: TextStyle(color: Colors.orange),),
+            ),
+          ),
+        ],
+      )
