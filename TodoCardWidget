@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+import 'package:todo_list_app/todo_model.dart';
+class TodoCardWidget extends StatelessWidget {
+
+  final TodoModel todoModel;
+  const TodoCardWidget({super.key,required this.todoModel});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Card(
+      child: ListTile(
+        leading: Checkbox(
+          value: todoModel.status,
+          onChanged: (value) {
+            print(value);
+          },
+        ),
+        title: Text(todoModel.taskName),
+        subtitle: Text(
+          todoModel.dueDate,
+          style: TextStyle(
+            color: Colors.blue,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        trailing: Text(todoModel.taskType, style: TextStyle(color: todoTypeColor(todoModel.taskType), fontWeight: FontWeight.w800)),
+      ),
+    );
+  }
+}
+
+Color todoTypeColor(String value){
+  switch(value){
+    case "Shopping":
+      return Colors.orange;
+    case "Work":
+      return Colors.blue;
+    case "Pending":
+      return Colors.red;
+    case "Wishlist":
+      return Colors.green;
+    default:
+      return Colors.black;
+  }
+}
