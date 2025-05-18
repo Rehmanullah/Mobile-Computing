@@ -1,0 +1,84 @@
+import 'package:flutter/material.dart';
+import 'package:todo_list_app/data.dart';
+import 'package:todo_list_app/todo_Card_Widget.dart';
+import 'package:todo_list_app/todo_model.dart';
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("ToDo: Pending"),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+        actions: [
+          PopupMenuButton(
+            itemBuilder:
+                (context) =>
+                    popupMenuItemTileList
+                        .map(
+                          (e) => PopupMenuItem(
+                            child: Text(
+                              e,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        )
+                        .toList(),
+          ),
+          // PopupMenuButton(
+          //   itemBuilder: (context) => [
+          //     PopupMenuItem(child: Text("All")),
+          //     PopupMenuItem(child: Text("Pending")),
+          //   ],
+          // ),
+        ],
+      ),
+      body: ListView(
+        children: [
+          TodoCardWidget(
+            todoModel: TodoModel(
+              taskName: "Task 1",
+              dueDate: "19-05-2025",
+              taskType: "Work",
+              status: true,
+            ),
+          ),
+          TodoCardWidget(
+            todoModel: TodoModel(
+              taskName: "Task 1",
+              dueDate: "19-05-2025",
+              taskType: "Wishlist",
+              status: true,
+            ),
+          ),
+          TodoCardWidget(
+            todoModel: TodoModel(
+              taskName: "Task 1",
+              dueDate: "19-05-2025",
+              taskType: "Pending",
+              status: true,
+            ),
+          ),
+          TodoCardWidget(
+            todoModel: TodoModel(
+              taskName: "Task 1",
+              dueDate: "19-05-2025",
+              taskType: "Work",
+              status: true,
+            ),
+          ),
+          TodoCardWidget(
+            todoModel: TodoModel(
+              taskName: "Task 1",
+              dueDate: "19-05-2025",
+              taskType: "Shopping",
+              status: true,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
