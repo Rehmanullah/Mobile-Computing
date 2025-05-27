@@ -1,2 +1,9 @@
 // A link to another repository
+//Clone them by following these steps:
+
+//Click on the green button called Code
+//Copy the URL in https tab or click Download Zip button
+//Enter the following line in the terminal - git clone <url> (if you didn't click on the Download Zip Button)
+//cd starter_code (or final_code)
+//Enter the following line in the terminal - flutter pub get
 https://github.com/RivaanRanawat/flutter-firebase-tutorial/tree/main/starter_code
